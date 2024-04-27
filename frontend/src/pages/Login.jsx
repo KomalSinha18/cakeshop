@@ -17,7 +17,7 @@ const handleChange = (key) => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/api/v1/user/login",creds, {withCredentials:true})
+      const response = await axios.post("/api/v1/user/login",creds, {withCredentials:true})
       console.log(response)
       setUser(response?.data?.user);
       toast.success(response?.data?.message);

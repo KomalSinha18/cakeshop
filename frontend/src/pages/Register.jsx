@@ -16,7 +16,7 @@ function Register({setUser}) {
       };
       const handleSignup = async (e) => {
         try {
-          const response = await axios.post("http://localhost:5000/api/v1/user/register",creds, {withCredentials:true})
+          const response = await axios.post("/api/v1/user/register",creds, {withCredentials:true})
           console.log(response)
           setUser(response?.data?.user)
           toast.success(response?.data?.message)

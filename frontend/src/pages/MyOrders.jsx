@@ -13,7 +13,7 @@ function MyOrders() {
 
   const myOrders = async() => {
     try {
-        const response = await axios.get("http://localhost:5000/api/v1/order/myorders",{withCredentials:true})
+        const response = await axios.get("/api/v1/order/myorders",{withCredentials:true})
         setOrders(response.data?.orders)
     } catch (error) {
         console.log(error);

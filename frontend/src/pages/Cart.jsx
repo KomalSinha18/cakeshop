@@ -18,7 +18,7 @@ function Cart({setUser, user}) {
 
 const removeFromCartHandler = async (id) => {
   try {
-    const response = await axios.get(`http://localhost:5000/api/v1/product/removeFromcart/${id}`,{withCredentials:true})
+    const response = await axios.get(`/api/v1/product/removeFromcart/${id}`,{withCredentials:true})
     setUser(response?.data?.user)
     toast.success("Product Removed From Cart");
   } catch (error) {
@@ -29,7 +29,7 @@ const removeFromCartHandler = async (id) => {
 
 const orderPlaceHandler = async (id) => {
   try {
-    const response = await axios.post(`http://localhost:5000/api/v1/order/placed`,{totalPrice,address},{withCredentials:true})
+    const response = await axios.post(`/api/v1/order/placed`,{totalPrice,address},{withCredentials:true})
     setUser(response?.data?.user)
     toast.success("Order Placed");
   } catch (error) {
