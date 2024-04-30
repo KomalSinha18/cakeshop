@@ -37,8 +37,10 @@ function Navbar({user}) {
             <img src={logo} height="auto" width="auto" />
             </Link>
           </Box>
+          {
+            user?
           <Box
-            sx={{ flexGrow: 0, display: "flex", alignItems: "center", gap: 3 }}
+            sx={{ flexGrow: 0, display: "flex", alignItems: "center", gap: 0 }}
           >
             {/* <IconButton aria-label="cart">
         <ShoppingCartIcon />
@@ -58,7 +60,7 @@ function Navbar({user}) {
 
               startIcon={<LocalMallIcon />}
             >
-               My Orders
+               
             </Button>
             <Button
             onClick={()=>navigate('/cart')}
@@ -77,7 +79,7 @@ function Navbar({user}) {
               
               {/* <ShoppingCartIcon color="#e30369f0" /> */}
     
-              My Cart
+              
             </Button>
             {/* <Button variant="contained" size="small">
           Logout
@@ -95,9 +97,9 @@ function Navbar({user}) {
                 }
             }}
             startIcon={<LogoutIcon />}>
-              Logout
+              
             </Button>
-          </Box>
+          </Box>:""}
         </Toolbar>
       </Container>
     </AppBar>
